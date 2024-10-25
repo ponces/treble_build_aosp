@@ -21,6 +21,6 @@
   <!-- LineageOS -->
   <remove-project name="platform/packages/apps/Launcher3" />
   <remove-project name="platform/packages/apps/ThemePicker" />
-  <project name="ponces/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet" remote="github" revision="lineage-22.0" />
-  <project name="ponces/android_packages_apps_ThemePicker" path="packages/apps/ThemePicker" remote="github" revision="lineage-22.0" />
+  <project name="LineageOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet" remote="github" revision="lineage-22.0" />
+  <project name="LineageOS/android_packages_apps_ThemePicker" path="packages/apps/ThemePicker" remote="github" revision="lineage-22.0" />
 </manifest>
