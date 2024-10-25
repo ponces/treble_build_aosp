@@ -6,7 +6,7 @@ on:
     tags:
       - 'v*'
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 

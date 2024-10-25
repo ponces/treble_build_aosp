@@ -16,7 +16,7 @@ TD="android-15.0"
 initRepos() {
     echo "--> Getting latest upstream version"
     aosp=$(curl -sL https://github.com/TrebleDroid/treble_manifest/raw/$TD/replace.xml | grep -oP "${TD}.0_r\d+" | head -1)
-    
+
     echo "--> Initializing workspace"
     repo init -u https://android.googlesource.com/platform/manifest -b "$aosp"
     echo

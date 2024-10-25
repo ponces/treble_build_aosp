@@ -26,8 +26,8 @@ jobs:
           cp -r patches/trebledroid patches/patches
           cd patches
           zip -rq patches-for-developers.zip patches
-        
-      - name: Commit Patches 
+
+      - name: Commit Patches
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

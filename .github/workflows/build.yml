@@ -8,14 +8,14 @@ on:
         default: 'treble_arm64_bgN'
         required: false
         type: string
-  push:
-    branches:
-      - android-15.0
-    paths-ignore:
-      - '.github/**'
-      - 'config/**'
+  # push:
+  #   branches:
+  #     - android-15.0
+  #   paths-ignore:
+  #     - '.github/**'
+  #     - 'config/**'
 
-concurrency: 
+concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
