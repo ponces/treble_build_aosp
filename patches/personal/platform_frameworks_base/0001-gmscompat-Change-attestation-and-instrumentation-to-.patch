@@ -1,7 +1,7 @@
-From 6d4be4de8f059d099625c98126a08723d186f1fd Mon Sep 17 00:00:00 2001
+From 00b34966add1c1a4ccb43591625f6aa0c3e57441 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Thu, 9 Nov 2023 12:33:55 +0100
-Subject: [PATCH 1/8] gmscompat: Change attestation and instrumentation to pass
+Subject: [PATCH 1/9] gmscompat: Change attestation and instrumentation to pass
  SafetyNet and Play Integrity API.
 
 Original work by @kdrag0n.
