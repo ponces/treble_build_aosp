@@ -108,13 +108,13 @@ index 000000000000..99e61ae74007
 +    }
 +
 +    private static void spoofBuildGms() {
-+        setPropValue("PRODUCT", "komodo_beta");
-+        setPropValue("DEVICE", "komodo");
++        setPropValue("PRODUCT", "comet_beta");
++        setPropValue("DEVICE", "comet");
 +        setPropValue("MANUFACTURER", "Google");
 +        setPropValue("BRAND", "google");
-+        setPropValue("MODEL", "Pixel 9 Pro XL");
-+        setPropValue("FINGERPRINT", "google/komodo_beta/komodo:15/AP41.240823.009/12329489:user/release-keys");
-+        setPropValue("VERSION.SECURITY_PATCH", "2024-09-05");
++        setPropValue("MODEL", "Pixel 9 Pro Fold");
++        setPropValue("FINGERPRINT", "google/comet_beta/comet:15/AP41.240925.009/12534705:user/release-keys");
++        setPropValue("VERSION.SECURITY_PATCH", "2024-10-05");
 +        setPropValue("VERSION.DEVICE_INITIAL_SDK_INT", "32");
 +    }
 +
