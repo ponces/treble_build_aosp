@@ -25,21 +25,14 @@ jobs:
       - name: Build Image
         run: docker build -f build/Dockerfile -t ponces/treble .
 
-      - name: Get Keys
-        uses: actions/checkout@v4
-        with:
-          repository: ponces/vendor_ponces-priv
-          token: ${{ secrets.GH_TOKEN }}
-          path: vendor_ponces-priv
-
       - name: Build ROM
         run: |
           mkdir builds
           docker run --rm \
                      --privileged \
                      --name treble \
+                     --volume /root/.ssh:/root/.ssh \
                      --volume ${{ github.workspace }}/builds:/root/builds \
-                     --volume ${{ github.workspace }}/vendor_ponces-priv:/aosp/vendor/ponces-priv \
                      --volume ${{ github.workspace }}/config/ota.json:/aosp/treble_aosp/config/ota.json \
                      ponces/treble treblebuild
 

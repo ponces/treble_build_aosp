@@ -2,6 +2,7 @@
 <manifest>
   <remote name="github" fetch="https://github.com" />
   <remote name="gitlab" fetch="https://gitlab.com" />
+  <remote name="private" fetch="ssh://git@github.com" />
 
   <!-- TrebleDroid -->
   <project name="TrebleDroid/device_phh_treble" path="device/phh/treble" remote="github" revision="android-15.0" />
@@ -18,6 +19,7 @@
   <project name="ponces/treble_adapter" path="treble_adapter" remote="github" revision="master" />
   <project name="ponces/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="android-15.0" clone-depth="1" />
   <project name="ponces/vendor_ponces" path="vendor/ponces" remote="github" revision="android-15.0" />
+  <project name="ponces/vendor_ponces-priv" path="vendor/ponces-priv" remote="private" revision="android-15.0" />
 
   <!-- LineageOS -->
   <remove-project name="platform/packages/apps/Launcher3" />
