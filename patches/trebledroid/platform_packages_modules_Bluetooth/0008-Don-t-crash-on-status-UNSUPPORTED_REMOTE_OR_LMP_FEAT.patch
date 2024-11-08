@@ -1,4 +1,4 @@
-From 802cdb1ca4463437005f94f5d7cb403295746a1e Mon Sep 17 00:00:00 2001
+From 3914fb4c3581aff5b7d6197f90c648a899605259 Mon Sep 17 00:00:00 2001
 From: DerTeufel <dominik-kassel@gmx.de>
 Date: Wed, 4 Jan 2023 21:39:37 +0100
 Subject: [PATCH 8/8] Don't crash on status:UNSUPPORTED_REMOTE_OR_LMP_FEATURE

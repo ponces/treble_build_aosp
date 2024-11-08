@@ -1,4 +1,4 @@
-From 1992d5f2e7d35a3811ce07079c1c10db0e884e0d Mon Sep 17 00:00:00 2001
+From bb880769086e801022d6df13e9034b9eedbf325d Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 17 Oct 2021 17:17:13 -0400
 Subject: [PATCH 3/8] Don't abort when failing to get real-time priority
