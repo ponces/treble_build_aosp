@@ -28,7 +28,7 @@ initRepos() {
 
 syncRepos() {
     echo "--> Syncing repos"
-    repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all) || repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --all)
+    repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --ignore=2) || repo sync -c --force-sync --no-clone-bundle --no-tags -j$(nproc --ignore=2)
     echo
 }
 
@@ -68,11 +68,11 @@ buildTrebleApp() {
 buildVariant() {
     echo "--> Building $1"
     lunch "$1"-ap3a-userdebug
-    make -j$(nproc --all) installclean
-    make -j$(nproc --all) systemimage
-    make -j$(nproc --all) target-files-package otatools
+    make -j$(nproc --ignore=2) installclean
+    make -j$(nproc --ignore=2) systemimage
+    make -j$(nproc --ignore=2) target-files-package otatools
     bash $BL/sign.sh "vendor/ponces-priv/keys" $OUT/signed-target_files.zip
-    unzip -jo $OUT/signed-target_files.zip IMAGES/system.img -d $OUT
+    unzip -joq $OUT/signed-target_files.zip IMAGES/system.img -d $OUT
     mv $OUT/system.img $BD/system-"$1".img
     echo
 }
