@@ -16,7 +16,7 @@ BV=$1
 
 initRepos() {
     echo "--> Initializing workspace"
-    repo init -u https://android.googlesource.com/platform/manifest -b android-15.0.0_r5 --git-lfs
+    repo init -u https://android.googlesource.com/platform/manifest -b android-15.0.0_r8 --git-lfs
     echo
 
     echo "--> Preparing local manifest"
@@ -67,7 +67,7 @@ buildTrebleApp() {
 
 buildVariant() {
     echo "--> Building $1"
-    lunch "$1"-ap3a-userdebug
+    lunch "$1"-ap4a-userdebug
     make -j$(nproc --ignore=2) installclean
     make -j$(nproc --ignore=2) systemimage
     make -j$(nproc --ignore=2) target-files-package otatools
