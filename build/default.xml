@@ -20,12 +20,6 @@
   <project name="ponces/vendor_ponces" path="vendor/ponces" remote="github" revision="android-15.0" />
   <project name="ponces/vendor_ponces-priv" path="vendor/ponces-priv" remote="private" revision="android-15.0" />
 
-  <!-- LineageOS -->
-  <remove-project name="platform/packages/apps/Launcher3" />
-  <remove-project name="platform/packages/apps/ThemePicker" />
-  <project name="LineageOS/android_packages_apps_Trebuchet" path="packages/apps/Trebuchet" remote="github" revision="lineage-22.0" />
-  <project name="LineageOS/android_packages_apps_ThemePicker" path="packages/apps/ThemePicker" remote="github" revision="lineage-22.0" />
-
   <!-- crDroid -->
   <project name="crdroidandroid/android_packages_services_OmniJaws" path="packages/services/OmniJaws" remote="github" revision="15.0" />
 </manifest>
