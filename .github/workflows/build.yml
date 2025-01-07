@@ -25,6 +25,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VENDOR_PONCES_PRIV_KEY }}
 
       - name: Set Build Variant
         run: echo "BUILD_VARIANT=${{ inputs.build_variant || 'treble_arm64_bgN' }}" >> $GITHUB_ENV
@@ -35,10 +38,13 @@ jobs:
       - name: Build ROM
         run: |
           mkdir builds
+          ssh-keyscan github.com > known_hosts
           docker run --rm \
                      --privileged \
                      --name test \
-                     --volume /root/.ssh:/root/.ssh \
+                     --env SSH_AUTH_SOCK=/ssh-agent \
+                     --volume $SSH_AUTH_SOCK:/ssh-agent \
+                     --volume ${{ github.workspace }}/known_hosts:/root/.ssh/known_hosts \
                      --volume ${{ github.workspace }}/builds:/root/builds \
                      ponces/treble treblebuild ${{ env.BUILD_VARIANT }}
 

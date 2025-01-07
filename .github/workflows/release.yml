@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VENDOR_PONCES_PRIV_KEY }}
 
       - name: Setup Environment
         run: echo "RELEASE_TITLE=$(date +'v%Y.%m.%d')" >> $GITHUB_ENV
@@ -28,10 +31,13 @@ jobs:
       - name: Build ROM
         run: |
           mkdir builds
+          ssh-keyscan github.com > known_hosts
           docker run --rm \
                      --privileged \
                      --name treble \
-                     --volume /root/.ssh:/root/.ssh \
+                     --env SSH_AUTH_SOCK=/ssh-agent \
+                     --volume $SSH_AUTH_SOCK:/ssh-agent \
+                     --volume ${{ github.workspace }}/known_hosts:/root/.ssh/known_hosts \
                      --volume ${{ github.workspace }}/builds:/root/builds \
                      --volume ${{ github.workspace }}/config/ota.json:/aosp/treble_aosp/config/ota.json \
                      ponces/treble treblebuild
